@@ -19,7 +19,8 @@ struct AllBucketsGridView: View {
         
     NavigationSplitView {
         ScrollView {
-            LazyVGrid(columns: [GridItem(), GridItem()]) {
+            let gridItemSpec = GridItem(.adaptive(minimum: 80, maximum: .greatestFiniteMagnitude))
+            LazyVGrid(columns: [gridItemSpec]) {
                 ForEach(buckets) { bucket in
                     NavigationLink {
                         BucketView(bucket: bucket)
