@@ -11,21 +11,21 @@ import SwiftData
 struct ContentView: View {
     
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var buckets: [Bucket]
 
     var body: some View {
         NavigationSplitView {
             ScrollView {
                 LazyVGrid(columns: [GridItem(), GridItem()]) {
-                    ForEach(items) { item in
+                    ForEach(buckets) { bucket in
                         NavigationLink {
-                            Text("Nav link")
+                            BucketView(bucket: bucket)
                         } label: {
-                            Text("Nav label")
+                            BucketGridItemView(bucket: bucket)
                         }
                     }
                     .onDelete(perform: deleteItems)
-                }
+                }.padding()
             }
 #if os(macOS)
             .navigationSplitViewColumnWidth(min: 180, ideal: 200)
@@ -50,15 +50,15 @@ struct ContentView: View {
     private func addItem() {
         withAnimation {
             // TODO Populate with user input
-            let newItem = Item(title: "Item title", content: "Item content")
-            modelContext.insert(newItem)
+            let newBucket = Bucket(title: "Bucket title", info: "Bucket info")
+            modelContext.insert(newBucket)
         }
     }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                modelContext.delete(buckets[index])
             }
         }
     }
