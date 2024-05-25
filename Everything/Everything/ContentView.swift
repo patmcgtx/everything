@@ -14,12 +14,12 @@ struct ContentView: View {
         
         // TODO Add a nav header and maybe tab bar 
         
-        // TODO Be able to switch between different views here, i.e. grid vs. list
-        
-        // TODO Be able to filter by bucket name
+        // TODO Filter by bucket name
         
         // TODO Show convenience groupings such as "Starred", "Recently Viewed", etc.
         
+        // TODO Be able to switch between different views here, i.e. grid vs. list (lower priority)
+
         AllBucketsGridView()
     }
 
