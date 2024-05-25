@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-/// A bucket in the Everything database.  Buckets contain items.
+/// A bucket in the database, containing items.
 @Model
 final class Bucket: Identifiable {
     

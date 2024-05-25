@@ -8,14 +8,16 @@
 import Foundation
 import SwiftUI
 
-// TODO doc
+/// The view representing a bucket in a grid, ostensibly for navigation to that bucket.
 struct BucketGridItemView : View {
 
     let bucket: Bucket
     
     var body: some View {
         Text(bucket.title)
+            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
             .padding()
+            .border(Color.blue, width: 1)
     }
     
 }

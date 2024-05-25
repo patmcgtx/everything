@@ -9,7 +9,8 @@ import Foundation
 import SwiftUI
 import SwiftData
 
-struct BucketGridView: View {
+/// A grid representation of all buckets.
+struct AllBucketsGridView: View {
     
     @Environment(\.modelContext) private var modelContext
     @Query private var buckets: [Bucket]
@@ -57,6 +58,7 @@ struct BucketGridView: View {
         }
     }
 
+    // TODO Handle bucket deletions
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {

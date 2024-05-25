@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-/// An item in the Everything database
+/// A bucket item in the database.
 @Model
 final class Item: Identifiable {
             

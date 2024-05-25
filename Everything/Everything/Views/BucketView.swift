@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-// TODO doc
+/// The main view for a bucket, including bucket info and all contained items.
 struct BucketView: View {
     
     let bucket: Bucket
