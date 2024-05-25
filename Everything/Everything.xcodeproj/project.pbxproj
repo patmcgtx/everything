@@ -10,6 +10,7 @@
 		693589132C002DB400E0DC3A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693589122C002DB400E0DC3A /* Item.swift */; };
 		69D1E73E2C01870E0060279D /* BucketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1E73D2C01870E0060279D /* BucketView.swift */; };
 		69D1E7402C0187460060279D /* BucketGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1E73F2C0187460060279D /* BucketGridItemView.swift */; };
+		69D1E7422C01881D0060279D /* BucketGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1E7412C01881D0060279D /* BucketGridView.swift */; };
 		69D26B012BD1B936004E950E /* EverythingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D26B002BD1B936004E950E /* EverythingApp.swift */; };
 		69D26B032BD1B936004E950E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D26B022BD1B936004E950E /* ContentView.swift */; };
 		69D26B072BD1B938004E950E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69D26B062BD1B938004E950E /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		693589122C002DB400E0DC3A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		69D1E73D2C01870E0060279D /* BucketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketView.swift; sourceTree = "<group>"; };
 		69D1E73F2C0187460060279D /* BucketGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketGridItemView.swift; sourceTree = "<group>"; };
+		69D1E7412C01881D0060279D /* BucketGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketGridView.swift; sourceTree = "<group>"; };
 		69D26AFD2BD1B936004E950E /* Everything.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everything.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D26B002BD1B936004E950E /* EverythingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingApp.swift; sourceTree = "<group>"; };
 		69D26B022BD1B936004E950E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,8 +94,9 @@
 		69D1E73C2C0185860060279D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				69D1E73D2C01870E0060279D /* BucketView.swift */,
+				69D1E7412C01881D0060279D /* BucketGridView.swift */,
 				69D1E73F2C0187460060279D /* BucketGridItemView.swift */,
+				69D1E73D2C01870E0060279D /* BucketView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				693589132C002DB400E0DC3A /* Item.swift in Sources */,
+				69D1E7422C01881D0060279D /* BucketGridView.swift in Sources */,
 				69D1E7402C0187460060279D /* BucketGridItemView.swift in Sources */,
 				69EA23C72C00320600C38281 /* Bucket.swift in Sources */,
 				69D26B032BD1B936004E950E /* ContentView.swift in Sources */,
