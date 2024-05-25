@@ -20,7 +20,7 @@ final class Bucket: Identifiable {
     }
     
     /// Markdown text briefly describing the bucket
-    var info: String {
+    var about: String {
         didSet {
             self.whenUpdated = Date()
         }
@@ -44,10 +44,10 @@ final class Bucket: Identifiable {
 
     // MARK: Initializers
     
-    init(title: String, info: String) {
+    init(title: String, about: String) {
         
         self.title = title
-        self.info = info
+        self.about = about
         
         let now = Date()
         self.whenCreated = now

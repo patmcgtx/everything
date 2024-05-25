@@ -16,6 +16,6 @@ struct BucketView: View {
     // TODO Update bucket.lastViewed when this screen loads
     
     var body: some View {
-        Text(bucket.info)
+        Text(bucket.about)
     }
 }

@@ -53,13 +53,11 @@ struct AllBucketsGridView: View {
     
     private func addItem() {
         withAnimation {
-            // TODO Populate with user input
-            let newBucket = Bucket(title: "Bucket title", info: "Bucket info")
+            let newBucket = Bucket(title: "Some bucket", about: "About a bucket")
             modelContext.insert(newBucket)
         }
     }
 
-    // TODO Handle bucket deletions
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {

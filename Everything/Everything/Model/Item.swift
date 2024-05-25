@@ -16,7 +16,7 @@ final class Item: Identifiable {
     var title: String
     
     /// Markdown text describing the item
-    var content: String
+    var about: String
     
     // MARK: Metadata
 
@@ -30,10 +30,10 @@ final class Item: Identifiable {
     
     // MARK: Initializers
 
-    init(title: String, content: String) {
+    init(title: String, about: String) {
         
         self.title = title
-        self.content = content
+        self.about = about
         
         let now = Date()
         self.whenCreated = now
