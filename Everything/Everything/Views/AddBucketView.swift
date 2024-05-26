@@ -12,19 +12,20 @@ import SwiftData
 struct AddBucketView: View {
     
     @Environment(\.modelContext) private var modelContext
-    //                    let newBucket = Bucket(title: "Some bucket", about: "About a bucket")
-    //                    modelContext.insert(newBucket)
     
     @Binding var isPresented: Bool
+    
+    @State private var titleValue: String = ""
+    @State private var aboutValue: String = ""
 
     var body: some View {
         NavigationStack {
             Form {
                 Section(header: Text("Title")) {
-                    Text("Title")
+                    TextField("Title", text: self.$titleValue)
                 }
                 Section(header: Text("About")) {
-                    Text("About")
+                    TextField("About", text: self.$aboutValue)
                 }
             }
             .navigationTitle("New Bucket")
@@ -35,7 +36,11 @@ struct AddBucketView: View {
                     }
                 }
                 ToolbarItem(placement: .primaryAction) {
-                    Button("Done") {}
+                    Button("Done") {
+                        let newBucket = Bucket(title: self.titleValue, about: self.aboutValue)
+                        modelContext.insert(newBucket)
+                        self.isPresented = false
+                    }
                 }
             }
         }
