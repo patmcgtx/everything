@@ -19,6 +19,7 @@
 		69D26B1F2BD1B938004E950E /* EverythingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D26B1E2BD1B938004E950E /* EverythingUITests.swift */; };
 		69D26B212BD1B938004E950E /* EverythingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D26B202BD1B938004E950E /* EverythingUITestsLaunchTests.swift */; };
 		69EA23C72C00320600C38281 /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EA23C62C00320600C38281 /* Bucket.swift */; };
+		69FAA1DF2C02E8B400933F2C /* AddBucketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FAA1DE2C02E8B400933F2C /* AddBucketView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		69D26B1E2BD1B938004E950E /* EverythingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingUITests.swift; sourceTree = "<group>"; };
 		69D26B202BD1B938004E950E /* EverythingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		69EA23C62C00320600C38281 /* Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
+		69FAA1DE2C02E8B400933F2C /* AddBucketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBucketView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				69D1E7412C01881D0060279D /* AllBucketsGridView.swift */,
+				69FAA1DE2C02E8B400933F2C /* AddBucketView.swift */,
 				69D1E73F2C0187460060279D /* BucketGridItemView.swift */,
 				69D1E73D2C01870E0060279D /* BucketView.swift */,
 			);
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69FAA1DF2C02E8B400933F2C /* AddBucketView.swift in Sources */,
 				693589132C002DB400E0DC3A /* Item.swift in Sources */,
 				69D1E7422C01881D0060279D /* AllBucketsGridView.swift in Sources */,
 				69D1E7402C0187460060279D /* BucketGridItemView.swift in Sources */,

@@ -14,6 +14,8 @@ struct AllBucketsGridView: View {
     
     @Environment(\.modelContext) private var modelContext
     @Query private var buckets: [Bucket]
+    
+    @State private var isAddItemSheetPresented: Bool = false
 
     var body: some View {
         
@@ -31,6 +33,9 @@ struct AllBucketsGridView: View {
                 .onDelete(perform: deleteItems)
             }.padding()
         }
+        .sheet(isPresented: $isAddItemSheetPresented, content: {
+            AddBucketView(isPresented: $isAddItemSheetPresented)
+        })
 #if os(macOS)
         .navigationSplitViewColumnWidth(min: 180, ideal: 200)
 #endif
@@ -42,7 +47,7 @@ struct AllBucketsGridView: View {
 #endif
             ToolbarItem {
                 Button(action: addItem) {
-                    Label("Add Item", systemImage: "plus")
+                    Label("Add Item", systemImage: "folder.badge.plus")
                 }
             }
         }
@@ -53,8 +58,7 @@ struct AllBucketsGridView: View {
     
     private func addItem() {
         withAnimation {
-            let newBucket = Bucket(title: "Some bucket", about: "About a bucket")
-            modelContext.insert(newBucket)
+            self.isAddItemSheetPresented = true
         }
     }
 
