@@ -15,7 +15,7 @@ struct AddBucketView: View {
     
     @Environment(\.modelContext) private var modelContext
 
-    // Model management
+    // Modal presentation management
     
     @Binding var isPresented: Bool
     
