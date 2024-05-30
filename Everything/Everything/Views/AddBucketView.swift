@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import SwiftData
+import PhotosUI
 
 struct AddBucketView: View {
     
@@ -31,6 +32,11 @@ struct AddBucketView: View {
     }
     
     @FocusState private var focus: Field?
+    
+    // Photo picker
+    
+    @State private var photosPickerItem: PhotosPickerItem?
+    @State private var selectedPhotoData: Data?
 
     // Presentation
     
@@ -46,6 +52,12 @@ struct AddBucketView: View {
                     TextField("About", text: self.$aboutValue)
                         .focused(self.$focus, equals: .about)
                 }
+                
+                Section(header: Text("Thumbnail")) {
+                    PhotosPicker(selection: $photosPickerItem, matching: .images) {
+                        Label("Select Photo", systemImage: "photo")
+                    }
+                }
             }
             .navigationTitle("New Bucket")
             .toolbar {
@@ -56,7 +68,9 @@ struct AddBucketView: View {
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button("Done") {
-                        let newBucket = Bucket(title: self.titleValue, about: self.aboutValue)
+                        let newBucket = Bucket(title: self.titleValue, 
+                                               about: self.aboutValue,
+                                               photoData: self.selectedPhotoData)
                         modelContext.insert(newBucket)
                         self.isPresented = false
                     }
@@ -66,5 +80,22 @@ struct AddBucketView: View {
                 self.focus = .title
             }
         }
+        .onChange(of: photosPickerItem) {
+            guard let photosPickerItem else {
+                return
+            }
+            Task {
+                await updatedPhotosPickerItem(with: photosPickerItem)
+            }
+        }
     }
+    
+    // MARK: Helpers
+    
+    private func updatedPhotosPickerItem(with item: PhotosPickerItem) async {
+        if let photoData = try? await item.loadTransferable(type: Data.self) {
+            self.selectedPhotoData = photoData
+        }
+    }
+    
 }

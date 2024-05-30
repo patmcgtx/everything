@@ -42,12 +42,16 @@ final class Bucket: Identifiable {
     /// The timestamp for when this bucket was last viewed
     var lastViewed: Date
 
+    /// Cover photo
+    var photoData: Data?
+    
     // MARK: Initializers
     
-    init(title: String, about: String) {
+    init(title: String, about: String, photoData: Data? = nil) {
         
         self.title = title
         self.about = about
+        self.photoData = photoData
         
         let now = Date()
         self.whenCreated = now
