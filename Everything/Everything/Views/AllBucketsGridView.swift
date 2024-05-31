@@ -45,7 +45,7 @@ struct AllBucketsGridView: View {
                 EditButton()
             }
 #endif
-            ToolbarItem {
+            ToolbarItem(placement: .topBarLeading) {
                 Button(action: addItem) {
                     Label("Add Item", systemImage: "folder.badge.plus")
                 }
