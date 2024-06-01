@@ -8,7 +8,7 @@ Hopefully this all makese sense in the end. 🙌
 
 # To Do
 
-- [ ] Review this doc, which was hashes out quickly. and fix any type-os, eyc.
+- [ ] Review this doc, which was hashes out quickly. and fix any type-os, eyc. 😆
 - [ ] Add links and examples 
 
 # Requirements 
