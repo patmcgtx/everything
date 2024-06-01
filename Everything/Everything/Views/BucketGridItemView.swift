@@ -20,6 +20,8 @@ struct BucketGridItemView : View {
                let uiImage = UIImage(data: photoData) {
                 Image(uiImage: uiImage)
                     .resizable()
+                    .aspectRatio(contentMode: ContentMode.fit)
+                    .frame(width: 45, height: 45)
                     .cornerRadius(10)
             }
 

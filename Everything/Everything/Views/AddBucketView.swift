@@ -63,6 +63,8 @@ struct AddBucketView: View {
                    let uiImage = UIImage(data: selectedPhotoData) {
                     Image(uiImage: uiImage)
                         .resizable()
+                        .aspectRatio(contentMode: ContentMode.fit)
+                        .frame(width: 100, height: 100)
                         .cornerRadius(10)
                 } else {
                     Image(systemName: "photo")
