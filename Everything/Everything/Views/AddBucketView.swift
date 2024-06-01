@@ -58,6 +58,17 @@ struct AddBucketView: View {
                         Label("Select Photo", systemImage: "photo")
                     }
                 }
+                
+                if let selectedPhotoData,
+                   let uiImage = UIImage(data: selectedPhotoData) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .cornerRadius(10)
+                } else {
+                    Image(systemName: "photo")
+                        .foregroundColor(.accentColor)
+                }
+
             }
             .navigationTitle("New Bucket")
             .toolbar {
