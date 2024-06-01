@@ -14,10 +14,20 @@ struct BucketGridItemView : View {
     let bucket: Bucket
     
     var body: some View {
-        Text(bucket.title)
-            .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-            .padding()
-            .border(Color.blue, width: 1)
+        ZStack {
+
+            if let photoData = bucket.photoData,
+               let uiImage = UIImage(data: photoData) {
+                Image(uiImage: uiImage)
+                    .resizable()
+                    .cornerRadius(10)
+            }
+
+            Text(bucket.title)
+                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .padding()
+                .border(Color.blue, width: 1)
+        }
     }
     
 }
