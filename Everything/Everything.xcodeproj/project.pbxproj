@@ -18,6 +18,9 @@
 		69D26B152BD1B938004E950E /* EverythingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D26B142BD1B938004E950E /* EverythingTests.swift */; };
 		69D26B1F2BD1B938004E950E /* EverythingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D26B1E2BD1B938004E950E /* EverythingUITests.swift */; };
 		69D26B212BD1B938004E950E /* EverythingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D26B202BD1B938004E950E /* EverythingUITestsLaunchTests.swift */; };
+		69D2C7EA2C10F3F3003209AA /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D2C7E92C10F3F3003209AA /* ShareViewController.swift */; };
+		69D2C7ED2C10F3F3003209AA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 69D2C7EC2C10F3F3003209AA /* Base */; };
+		69D2C7F12C10F3F3003209AA /* ShareEverything.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 69D2C7E72C10F3F3003209AA /* ShareEverything.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		69EA23C72C00320600C38281 /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EA23C62C00320600C38281 /* Bucket.swift */; };
 		69FAA1DF2C02E8B400933F2C /* AddBucketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FAA1DE2C02E8B400933F2C /* AddBucketView.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +40,28 @@
 			remoteGlobalIDString = 69D26AFC2BD1B936004E950E;
 			remoteInfo = Everything;
 		};
+		69D2C7EF2C10F3F3003209AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69D26AF52BD1B936004E950E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69D2C7E62C10F3F3003209AA;
+			remoteInfo = ShareEverything;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		69D2C7F22C10F3F3003209AA /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				69D2C7F12C10F3F3003209AA /* ShareEverything.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		693589122C002DB400E0DC3A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -55,6 +79,10 @@
 		69D26B1A2BD1B938004E950E /* EverythingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EverythingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D26B1E2BD1B938004E950E /* EverythingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingUITests.swift; sourceTree = "<group>"; };
 		69D26B202BD1B938004E950E /* EverythingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		69D2C7E72C10F3F3003209AA /* ShareEverything.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareEverything.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		69D2C7E92C10F3F3003209AA /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		69D2C7EC2C10F3F3003209AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		69D2C7EE2C10F3F3003209AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69EA23C62C00320600C38281 /* Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
 		69FAA1DE2C02E8B400933F2C /* AddBucketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBucketView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,6 +103,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		69D26B172BD1B938004E950E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69D2C7E42C10F3F3003209AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -110,6 +145,7 @@
 				69D26AFF2BD1B936004E950E /* Everything */,
 				69D26B132BD1B938004E950E /* EverythingTests */,
 				69D26B1D2BD1B938004E950E /* EverythingUITests */,
+				69D2C7E82C10F3F3003209AA /* ShareEverything */,
 				69D26AFE2BD1B936004E950E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -120,6 +156,7 @@
 				69D26AFD2BD1B936004E950E /* Everything.app */,
 				69D26B102BD1B938004E950E /* EverythingTests.xctest */,
 				69D26B1A2BD1B938004E950E /* EverythingUITests.xctest */,
+				69D2C7E72C10F3F3003209AA /* ShareEverything.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +200,16 @@
 			path = EverythingUITests;
 			sourceTree = "<group>";
 		};
+		69D2C7E82C10F3F3003209AA /* ShareEverything */ = {
+			isa = PBXGroup;
+			children = (
+				69D2C7E92C10F3F3003209AA /* ShareViewController.swift */,
+				69D2C7EB2C10F3F3003209AA /* MainInterface.storyboard */,
+				69D2C7EE2C10F3F3003209AA /* Info.plist */,
+			);
+			path = ShareEverything;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,10 +220,12 @@
 				69D26AF92BD1B936004E950E /* Sources */,
 				69D26AFA2BD1B936004E950E /* Frameworks */,
 				69D26AFB2BD1B936004E950E /* Resources */,
+				69D2C7F22C10F3F3003209AA /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				69D2C7F02C10F3F3003209AA /* PBXTargetDependency */,
 			);
 			name = Everything;
 			productName = Everything;
@@ -219,6 +268,23 @@
 			productReference = 69D26B1A2BD1B938004E950E /* EverythingUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		69D2C7E62C10F3F3003209AA /* ShareEverything */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69D2C7F52C10F3F3003209AA /* Build configuration list for PBXNativeTarget "ShareEverything" */;
+			buildPhases = (
+				69D2C7E32C10F3F3003209AA /* Sources */,
+				69D2C7E42C10F3F3003209AA /* Frameworks */,
+				69D2C7E52C10F3F3003209AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareEverything;
+			productName = ShareEverything;
+			productReference = 69D2C7E72C10F3F3003209AA /* ShareEverything.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -226,7 +292,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					69D26AFC2BD1B936004E950E = {
@@ -239,6 +305,9 @@
 					69D26B192BD1B938004E950E = {
 						CreatedOnToolsVersion = 15.3;
 						TestTargetID = 69D26AFC2BD1B936004E950E;
+					};
+					69D2C7E62C10F3F3003209AA = {
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
@@ -258,6 +327,7 @@
 				69D26AFC2BD1B936004E950E /* Everything */,
 				69D26B0F2BD1B938004E950E /* EverythingTests */,
 				69D26B192BD1B938004E950E /* EverythingUITests */,
+				69D2C7E62C10F3F3003209AA /* ShareEverything */,
 			);
 		};
 /* End PBXProject section */
@@ -283,6 +353,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		69D2C7E52C10F3F3003209AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69D2C7ED2C10F3F3003209AA /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +399,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		69D2C7E32C10F3F3003209AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69D2C7EA2C10F3F3003209AA /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -334,7 +420,23 @@
 			target = 69D26AFC2BD1B936004E950E /* Everything */;
 			targetProxy = 69D26B1B2BD1B938004E950E /* PBXContainerItemProxy */;
 		};
+		69D2C7F02C10F3F3003209AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69D2C7E62C10F3F3003209AA /* ShareEverything */;
+			targetProxy = 69D2C7EF2C10F3F3003209AA /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		69D2C7EB2C10F3F3003209AA /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				69D2C7EC2C10F3F3003209AA /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		69D26B222BD1B938004E950E /* Debug */ = {
@@ -454,6 +556,7 @@
 		69D26B252BD1B938004E950E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Everything/Everything.entitlements;
@@ -492,6 +595,7 @@
 		69D26B262BD1B938004E950E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Everything/Everything.entitlements;
@@ -617,6 +721,61 @@
 			};
 			name = Release;
 		};
+		69D2C7F32C10F3F3003209AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7R2A5774NX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShareEverything/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShareEverything;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roundtripsoftware.Everything.ShareEverything;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		69D2C7F42C10F3F3003209AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7R2A5774NX;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShareEverything/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ShareEverything;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roundtripsoftware.Everything.ShareEverything;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -652,6 +811,15 @@
 			buildConfigurations = (
 				69D26B2B2BD1B938004E950E /* Debug */,
 				69D26B2C2BD1B938004E950E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		69D2C7F52C10F3F3003209AA /* Build configuration list for PBXNativeTarget "ShareEverything" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				69D2C7F32C10F3F3003209AA /* Debug */,
+				69D2C7F42C10F3F3003209AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
