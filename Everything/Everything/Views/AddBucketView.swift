@@ -43,12 +43,9 @@ struct AddBucketView: View {
     var body: some View {
         NavigationStack {
             Form {
-                Section(header: Text("Title")) {
+                Section(header: Text("Basics")) {
                     TextField("Title", text: self.$titleValue)
                         .focused(self.$focus, equals: .title)
-                }
-                
-                Section(header: Text("About")) {
                     TextField("About", text: self.$aboutValue)
                         .focused(self.$focus, equals: .about)
                 }
