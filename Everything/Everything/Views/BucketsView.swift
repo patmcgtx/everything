@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 import SwiftData
 
-/// A grid representation of all buckets.
-struct AllBucketsGridView: View {
+/// A view of all the buckets, possibly filtered.
+struct BucketsView: View {
     
     // MARK: Persistence / queries
     
