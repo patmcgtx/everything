@@ -22,6 +22,7 @@
 		69D2C7ED2C10F3F3003209AA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 69D2C7EC2C10F3F3003209AA /* Base */; };
 		69D2C7F12C10F3F3003209AA /* ShareEverything.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 69D2C7E72C10F3F3003209AA /* ShareEverything.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		69EA23C72C00320600C38281 /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EA23C62C00320600C38281 /* Bucket.swift */; };
+		69EE1CE92C1A998E005F01BD /* BucketdsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EE1CE82C1A998E005F01BD /* BucketdsGrid.swift */; };
 		69FAA1DF2C02E8B400933F2C /* AddBucketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FAA1DE2C02E8B400933F2C /* AddBucketView.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		69D2C7EC2C10F3F3003209AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		69D2C7EE2C10F3F3003209AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69EA23C62C00320600C38281 /* Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
+		69EE1CE82C1A998E005F01BD /* BucketdsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketdsGrid.swift; sourceTree = "<group>"; };
 		69FAA1DE2C02E8B400933F2C /* AddBucketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBucketView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 			children = (
 				69D26B022BD1B936004E950E /* ContentView.swift */,
 				69D1E7412C01881D0060279D /* AllBucketsView.swift */,
+				69EE1CE82C1A998E005F01BD /* BucketdsGrid.swift */,
 				69D1E73F2C0187460060279D /* BucketGridItemView.swift */,
 				69FAA1DE2C02E8B400933F2C /* AddBucketView.swift */,
 				69D1E73D2C01870E0060279D /* BucketView.swift */,
@@ -371,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69EE1CE92C1A998E005F01BD /* BucketdsGrid.swift in Sources */,
 				69FAA1DF2C02E8B400933F2C /* AddBucketView.swift in Sources */,
 				693589132C002DB400E0DC3A /* Item.swift in Sources */,
 				69D1E7422C01881D0060279D /* AllBucketsView.swift in Sources */,
