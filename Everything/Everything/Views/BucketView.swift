@@ -11,9 +11,13 @@ import SwiftUI
 /// The main view for a bucket, including bucket info and all contained items.
 struct BucketView: View {
     
+    // TODO Update bucket.lastViewed when this screen loads
+
+    // MARK: Incoming data
+    
     let bucket: Bucket
     
-    // TODO Update bucket.lastViewed when this screen loads
+    // MARK: Main view
     
     var body: some View {
         Text(bucket.about)

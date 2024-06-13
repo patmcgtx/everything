@@ -12,10 +12,16 @@ import SwiftData
 /// A grid representation of all buckets.
 struct AllBucketsGridView: View {
     
+    // MARK: Persistence / queries
+    
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Bucket.title, order: .forward) private var buckets: [Bucket]
     
+    // MARK: Modal states
+
     @State private var isAddBucketViewPresented: Bool = false
+
+    // MARK: Main view
 
     var body: some View {
         

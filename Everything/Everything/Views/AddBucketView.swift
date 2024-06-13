@@ -10,22 +10,23 @@ import SwiftUI
 import SwiftData
 import PhotosUI
 
+/// A view that prompts the user to create a new bucket
 struct AddBucketView: View {
     
-    // Persistence
+    // MARK: Persistence
     
     @Environment(\.modelContext) private var modelContext
 
-    // Modal presentation management
+    // MARK: Modal presentation management
     
     @Binding var isPresented: Bool
     
-    // Internal state
+    // MARK: User input fields
     
     @State private var titleValue: String = ""
     @State private var aboutValue: String = ""
     
-    // Field focus
+    // MARK: Field focus
     
     enum Field {
         case title, about
@@ -33,12 +34,12 @@ struct AddBucketView: View {
     
     @FocusState private var focus: Field?
     
-    // Photo picker
+    // MARK: Photo picker
     
     @State private var photosPickerItem: PhotosPickerItem?
     @State private var selectedPhotoData: Data?
 
-    // Presentation
+    // MARK: Main view
     
     var body: some View {
         NavigationStack {

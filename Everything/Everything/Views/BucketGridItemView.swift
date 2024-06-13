@@ -8,10 +8,14 @@
 import Foundation
 import SwiftUI
 
-/// The view representing a bucket in a grid, ostensibly for navigation to that bucket.
+/// A view representing a bucket in a grid, ostensibly for navigation to that bucket.
 struct BucketGridItemView : View {
 
+    // MARK: Incoming data
+    
     let bucket: Bucket
+    
+    // MARK: Main view
     
     var body: some View {
         ZStack {
