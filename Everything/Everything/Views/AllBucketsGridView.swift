@@ -13,7 +13,7 @@ import SwiftData
 struct AllBucketsGridView: View {
     
     @Environment(\.modelContext) private var modelContext
-    @Query private var buckets: [Bucket]
+    @Query(sort: \Bucket.title, order: .forward) private var buckets: [Bucket]
     
     @State private var isAddBucketViewPresented: Bool = false
 
