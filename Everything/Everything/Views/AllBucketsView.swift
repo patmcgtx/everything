@@ -17,7 +17,11 @@ struct AllBucketsView: View {
     @Environment(\.modelContext) private var modelContext
     @Query(sort: \Bucket.title, order: .forward) private var buckets: [Bucket]
     
-    // MARK: Modal states
+    // MARK: Search
+    
+    @State private var searchText: String = ""
+    
+    // MARK: Modal presentation
 
     @State private var isAddBucketViewPresented: Bool = false
 
@@ -27,17 +31,9 @@ struct AllBucketsView: View {
         
     NavigationSplitView {
         ScrollView {
-            let gridItemSpec = GridItem(.adaptive(minimum: 80, maximum: .greatestFiniteMagnitude))
-            LazyVGrid(columns: [gridItemSpec]) {
-                ForEach(buckets) { bucket in
-                    NavigationLink {
-                        BucketView(bucket: bucket)
-                    } label: {
-                        BucketGridItemView(bucket: bucket)
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }.padding()
+            BucketdsGrid(filterText: self.searchText)
+            .searchable(text: self.$searchText)
+            .padding()
         }
         .sheet(isPresented: $isAddBucketViewPresented, content: {
             AddBucketView(isPresented: $isAddBucketViewPresented)
@@ -67,6 +63,8 @@ struct AllBucketsView: View {
         }
     }
     
+    // MARK: CRUD helpers
+    
     private func addBucket() {
         withAnimation {
             self.isAddBucketViewPresented = true
@@ -79,6 +77,37 @@ struct AllBucketsView: View {
         }
     }
 
+}
+
+struct BucketdsGrid: View {
+    
+    @Environment(\.modelContext) private var modelContext
+    @Query private var buckets: [Bucket]
+    
+    let filterText: String
+    
+    init(filterText: String) {
+
+        self.filterText = filterText
+        
+        let predicate = Bucket.filterBucketsBy(text: filterText)
+        _buckets = Query(filter: predicate, sort: \.title, order: .forward)
+    }
+
+    var body: some View {
+        let gridItemSpec = GridItem(.adaptive(minimum: 80, maximum: .greatestFiniteMagnitude))
+        LazyVGrid(columns: [gridItemSpec]) {
+            ForEach(buckets) { bucket in
+                NavigationLink {
+                    BucketView(bucket: bucket)
+                } label: {
+                    BucketGridItemView(bucket: bucket)
+                }
+            }
+            .onDelete(perform: deleteItems)
+        }
+    }
+    
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
@@ -87,5 +116,5 @@ struct AllBucketsView: View {
         }
     }
 
+    
 }
-
