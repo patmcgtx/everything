@@ -60,3 +60,14 @@ final class Bucket: Identifiable {
     }
     
 }
+
+extension Bucket {
+    
+    /// A filter for bucket searches
+    static func filterBucketsBy(text searchText: String) -> Predicate<Bucket> {
+        return #Predicate<Bucket> { bucket in
+            (searchText.isEmpty || bucket.title.contains(searchText))
+        }
+    }
+
+}

@@ -122,8 +122,8 @@
 		693589112C002DA000E0DC3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				693589122C002DB400E0DC3A /* Item.swift */,
 				69EA23C62C00320600C38281 /* Bucket.swift */,
+				693589122C002DB400E0DC3A /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
