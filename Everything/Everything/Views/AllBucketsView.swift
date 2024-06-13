@@ -10,7 +10,7 @@ import SwiftUI
 import SwiftData
 
 /// A view of all the buckets, possibly filtered.
-struct BucketsView: View {
+struct AllBucketsView: View {
     
     // MARK: Persistence / queries
     
