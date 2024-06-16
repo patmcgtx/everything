@@ -18,22 +18,21 @@ struct BucketGridItem : View {
     // MARK: Main view
     
     var body: some View {
-        ZStack {
-
+        
+        VStack {
             if let photoData = bucket.photoData,
                let uiImage = UIImage(data: photoData) {
                 Image(uiImage: uiImage)
                     .resizable()
                     .aspectRatio(contentMode: ContentMode.fit)
-                    .frame(width: 45, height: 45)
-                    .cornerRadius(10)
+                    .frame(width: 200)
             }
 
             Text(bucket.title)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 .padding()
-                .border(Color.blue, width: 1)
         }
+        .border(Color.black, width: 1)
+        .padding()
     }
     
 }

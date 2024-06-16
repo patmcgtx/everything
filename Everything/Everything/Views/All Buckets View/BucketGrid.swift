@@ -24,6 +24,7 @@ struct BucketGrid: View {
     }
 
     var body: some View {
+        // TODO Make two-column (or 40% or whatever), at least on iPhone
         let gridItemSpec = GridItem(.adaptive(minimum: 80, maximum: .greatestFiniteMagnitude))
         LazyVGrid(columns: [gridItemSpec]) {
             ForEach(buckets) { bucket in
