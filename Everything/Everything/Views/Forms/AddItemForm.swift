@@ -42,13 +42,6 @@ struct AddItemForm: View {
                     TextField("About", text: self.$aboutValue)
                         .focused(self.$focus, equals: .about)
                 }
-                
-                Section(header: Text("Buckets")) {
-                    List(self.allBuckets, id: \.id, selection: self.$bucketSelection) { bucket in
-                        Text(bucket.title)
-                    }
-                }
-                
             }
             .navigationTitle("New Item")
             .toolbar {
@@ -69,6 +62,14 @@ struct AddItemForm: View {
             .onAppear {
                 self.focus = .title
             }
+            
+            // Buck list-selection has to be *outside* of the Form to work correctly
+            Section(header: Text("Buckets")) {
+                List(self.allBuckets, id: \.id, selection: self.$bucketSelection) { bucket in
+                    Text(bucket.title)
+                }
+            }
+
         }
     }
     
