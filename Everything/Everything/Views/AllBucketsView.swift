@@ -24,6 +24,7 @@ struct AllBucketsView: View {
     // MARK: Modal presentation
 
     @State private var isAddBucketViewPresented: Bool = false
+    @State private var isAddItemViewPresented: Bool = false
 
     // MARK: Main view
 
@@ -35,8 +36,11 @@ struct AllBucketsView: View {
             .searchable(text: self.$searchText)
             .padding()
         }
-        .sheet(isPresented: $isAddBucketViewPresented, content: {
-            AddBucketView(isPresented: $isAddBucketViewPresented)
+        .sheet(isPresented: self.$isAddBucketViewPresented, content: {
+            AddBucketView(isPresented: self.$isAddBucketViewPresented)
+        })
+        .sheet(isPresented: self.$isAddItemViewPresented, content: {
+            AddItemView(isPresented: self.$isAddItemViewPresented)
         })
 #if os(macOS)
         .navigationSplitViewColumnWidth(min: 180, ideal: 200)
@@ -73,7 +77,7 @@ struct AllBucketsView: View {
 
     private func presentAddItem() {
         withAnimation {
-//            self.isAddItemSheetPresented = true
+            self.isAddItemViewPresented = true
         }
     }
 
