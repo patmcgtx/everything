@@ -18,6 +18,14 @@ struct AddItemView: View {
     @State private var titleValue: String = ""
     @State private var aboutValue: String = ""
     
+    // MARK: Field focus
+    
+    enum Field {
+        case title, about
+    }
+    
+    @FocusState private var focus: Field?
+    
     // MARK: Modal presentation management
     
     @Binding var isPresented: Bool
@@ -27,8 +35,12 @@ struct AddItemView: View {
             Form {
                 Section(header: Text("Basics")) {
                     TextField("Title", text: self.$titleValue)
+                        .focused(self.$focus, equals: .title)
                     TextField("About", text: self.$aboutValue)
+                        .focused(self.$focus, equals: .about)
                 }
+                
+                // TODO Add image selection
             }
             .navigationTitle("New Item")
             .toolbar {
@@ -45,6 +57,9 @@ struct AddItemView: View {
                         self.isPresented = false
                     }
                 }
+            }
+            .onAppear {
+                self.focus = .title
             }
         }
     }
