@@ -37,10 +37,10 @@ struct BucketsMainView: View {
             .padding()
         }
         .sheet(isPresented: self.$isAddBucketViewPresented, content: {
-            AddBucketView(isPresented: self.$isAddBucketViewPresented)
+            AddBucketForm(isPresented: self.$isAddBucketViewPresented)
         })
         .sheet(isPresented: self.$isAddItemViewPresented, content: {
-            AddItemView(isPresented: self.$isAddItemViewPresented)
+            AddItemForm(isPresented: self.$isAddItemViewPresented)
         })
 #if os(macOS)
         .navigationSplitViewColumnWidth(min: 180, ideal: 200)

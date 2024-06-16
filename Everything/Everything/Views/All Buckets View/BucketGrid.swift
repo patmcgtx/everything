@@ -28,7 +28,7 @@ struct BucketGrid: View {
         LazyVGrid(columns: [gridItemSpec]) {
             ForEach(buckets) { bucket in
                 NavigationLink {
-                    BucketDetailView(bucket: bucket)
+                    BucketDetail(bucket: bucket)
                 } label: {
                     BucketGridItem(bucket: bucket)
                 }

@@ -1,5 +1,5 @@
 //
-//  AddBucketView.swift
+//  AddBucketForm.swift
 //  Everything
 //
 //  Created by Patrick McGonigle on 5/25/24.
@@ -11,7 +11,7 @@ import SwiftData
 import PhotosUI
 
 /// A view that prompts the user to create a new bucket
-struct AddBucketView: View {
+struct AddBucketForm: View {
     
     // MARK: Persistence
     

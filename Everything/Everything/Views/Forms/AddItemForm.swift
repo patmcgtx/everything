@@ -1,5 +1,5 @@
 //
-//  AddItemView.swift
+//  AddItemForm.swift
 //  Everything
 //
 //  Created by Patrick McGonigle on 6/15/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AddItemView: View {
+struct AddItemForm: View {
     
     // MARK: Persistence
     
