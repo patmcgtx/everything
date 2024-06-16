@@ -132,16 +132,40 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		6963085C2C1E9BE700ECC22A /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				69FAA1DE2C02E8B400933F2C /* AddBucketView.swift */,
+				6963085A2C1E963100ECC22A /* AddItemView.swift */,
+			);
+			path = Forms;
+			sourceTree = "<group>";
+		};
+		6963085D2C1E9C1500ECC22A /* All Buckets View */ = {
+			isa = PBXGroup;
+			children = (
+				69D1E7412C01881D0060279D /* AllBucketsView.swift */,
+				69EE1CE82C1A998E005F01BD /* BucketdsGrid.swift */,
+				69D1E73F2C0187460060279D /* BucketGridItemView.swift */,
+			);
+			path = "All Buckets View";
+			sourceTree = "<group>";
+		};
+		6963085E2C1E9C2900ECC22A /* Bucket View */ = {
+			isa = PBXGroup;
+			children = (
+				69D1E73D2C01870E0060279D /* BucketView.swift */,
+			);
+			path = "Bucket View";
+			sourceTree = "<group>";
+		};
 		69D1E73C2C0185860060279D /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				69D26B022BD1B936004E950E /* ContentView.swift */,
-				69D1E7412C01881D0060279D /* AllBucketsView.swift */,
-				69EE1CE82C1A998E005F01BD /* BucketdsGrid.swift */,
-				69D1E73F2C0187460060279D /* BucketGridItemView.swift */,
-				69FAA1DE2C02E8B400933F2C /* AddBucketView.swift */,
-				6963085A2C1E963100ECC22A /* AddItemView.swift */,
-				69D1E73D2C01870E0060279D /* BucketView.swift */,
+				6963085D2C1E9C1500ECC22A /* All Buckets View */,
+				6963085E2C1E9C2900ECC22A /* Bucket View */,
+				6963085C2C1E9BE700ECC22A /* Forms */,
 			);
 			path = Views;
 			sourceTree = "<group>";
