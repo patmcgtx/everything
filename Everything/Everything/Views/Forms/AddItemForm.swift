@@ -6,17 +6,20 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddItemForm: View {
     
     // MARK: Persistence
     
     @Environment(\.modelContext) private var modelContext
-    
+    @Query(sort: \Bucket.title, order: .forward) private var allBuckets: [Bucket]
+        
     // MARK: User input fields
     
     @State private var titleValue: String = ""
     @State private var aboutValue: String = ""
+    @State private var bucketSelection = Set<UUID>()
     
     // MARK: Field focus
     
@@ -40,7 +43,12 @@ struct AddItemForm: View {
                         .focused(self.$focus, equals: .about)
                 }
                 
-                // TODO Add image selection
+                Section(header: Text("Buckets")) {
+                    List(self.allBuckets, id: \.id, selection: self.$bucketSelection) { bucket in
+                        Text(bucket.title)
+                    }
+                }
+                
             }
             .navigationTitle("New Item")
             .toolbar {
