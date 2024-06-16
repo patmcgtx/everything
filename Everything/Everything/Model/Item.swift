@@ -18,6 +18,9 @@ final class Item: Identifiable {
     /// Markdown text describing the item
     var about: String
     
+    /// Relationships
+    var buckets: [Bucket]
+    
     // MARK: Metadata
 
     @Attribute(.unique) var id: UUID = UUID()
@@ -30,11 +33,12 @@ final class Item: Identifiable {
     
     // MARK: Initializers
 
-    init(title: String, about: String) {
+    init(title: String, about: String, buckets: [Bucket]) {
         
         self.title = title
         self.about = about
-        
+        self.buckets = buckets
+
         let now = Date()
         self.whenCreated = now
         self.whenUpdated = now

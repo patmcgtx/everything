@@ -26,7 +26,10 @@ final class Bucket: Identifiable {
         }
     }
     
-    /// You can star a bucket for favorite / priority viewing 
+    /// Relationships
+    var items = [Item]()
+
+    /// You can star a bucket for favorite / priority viewing
     var isStarred: Bool = false
 
     // MARK: Metadata

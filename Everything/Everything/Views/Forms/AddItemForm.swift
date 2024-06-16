@@ -52,8 +52,12 @@ struct AddItemForm: View {
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button("Done") {
+                        let selectedBuckets = self.allBuckets.filter {
+                            self.bucketSelection.contains($0.id)
+                        }
                         let newItem = Item(title: self.titleValue,
-                                           about: self.aboutValue)
+                                           about: self.aboutValue,
+                                           buckets: selectedBuckets)
                         self.modelContext.insert(newItem)
                         self.isPresented = false
                     }
