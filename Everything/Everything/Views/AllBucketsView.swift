@@ -48,12 +48,12 @@ struct AllBucketsView: View {
             }
 #endif
             ToolbarItem(placement: .topBarLeading) {
-                Button(action: addItem) {
+                Button(action: presentAddItem) {
                     Label("Add Item", systemImage: "plus")
                 }
             }
             ToolbarItem() {
-                Button(action: addBucket) {
+                Button(action: presentAddBucket) {
                     Label("Add Bucket", systemImage: "folder.badge.plus")
                 }
             }
@@ -63,15 +63,15 @@ struct AllBucketsView: View {
         }
     }
     
-    // MARK: CRUD helpers
+    // MARK: Modal helpers
     
-    private func addBucket() {
+    private func presentAddBucket() {
         withAnimation {
             self.isAddBucketViewPresented = true
         }
     }
 
-    private func addItem() {
+    private func presentAddItem() {
         withAnimation {
 //            self.isAddItemSheetPresented = true
         }
