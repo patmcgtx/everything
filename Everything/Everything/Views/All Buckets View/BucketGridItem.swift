@@ -1,5 +1,5 @@
 //
-//  BucketGridItemView.swift
+//  BucketGridItem.swift
 //  Everything
 //
 //  Created by Patrick McGonigle on 5/24/24.
@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 /// A view representing a bucket in a grid, ostensibly for navigation to that bucket.
-struct BucketGridItemView : View {
+struct BucketGridItem : View {
 
     // MARK: Incoming data
     

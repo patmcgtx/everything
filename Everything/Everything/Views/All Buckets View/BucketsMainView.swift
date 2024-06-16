@@ -1,5 +1,5 @@
 //
-//  BucketGridView.swift
+//  BucketsMainView.swift
 //  Everything
 //
 //  Created by Patrick McGonigle on 5/24/24.
@@ -10,7 +10,7 @@ import SwiftUI
 import SwiftData
 
 /// A view of all the buckets, possibly filtered.
-struct AllBucketsView: View {
+struct BucketsMainView: View {
     
     // MARK: Persistence / queries
     
@@ -32,7 +32,7 @@ struct AllBucketsView: View {
         
     NavigationSplitView {
         ScrollView {
-            BucketdsGrid(filterText: self.searchText)
+            BucketGrid(filterText: self.searchText)
             .searchable(text: self.$searchText)
             .padding()
         }

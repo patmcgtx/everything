@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		693589132C002DB400E0DC3A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693589122C002DB400E0DC3A /* Item.swift */; };
 		6963085B2C1E963100ECC22A /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6963085A2C1E963100ECC22A /* AddItemView.swift */; };
-		69D1E73E2C01870E0060279D /* BucketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1E73D2C01870E0060279D /* BucketView.swift */; };
-		69D1E7402C0187460060279D /* BucketGridItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1E73F2C0187460060279D /* BucketGridItemView.swift */; };
-		69D1E7422C01881D0060279D /* AllBucketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1E7412C01881D0060279D /* AllBucketsView.swift */; };
+		69D1E73E2C01870E0060279D /* BucketDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1E73D2C01870E0060279D /* BucketDetailView.swift */; };
+		69D1E7402C0187460060279D /* BucketGridItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1E73F2C0187460060279D /* BucketGridItem.swift */; };
+		69D1E7422C01881D0060279D /* BucketsMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1E7412C01881D0060279D /* BucketsMainView.swift */; };
 		69D26B012BD1B936004E950E /* EverythingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D26B002BD1B936004E950E /* EverythingApp.swift */; };
 		69D26B032BD1B936004E950E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D26B022BD1B936004E950E /* ContentView.swift */; };
 		69D26B072BD1B938004E950E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69D26B062BD1B938004E950E /* Assets.xcassets */; };
@@ -23,7 +23,7 @@
 		69D2C7ED2C10F3F3003209AA /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 69D2C7EC2C10F3F3003209AA /* Base */; };
 		69D2C7F12C10F3F3003209AA /* ShareEverything.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 69D2C7E72C10F3F3003209AA /* ShareEverything.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		69EA23C72C00320600C38281 /* Bucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EA23C62C00320600C38281 /* Bucket.swift */; };
-		69EE1CE92C1A998E005F01BD /* BucketdsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EE1CE82C1A998E005F01BD /* BucketdsGrid.swift */; };
+		69EE1CE92C1A998E005F01BD /* BucketGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EE1CE82C1A998E005F01BD /* BucketGrid.swift */; };
 		69FAA1DF2C02E8B400933F2C /* AddBucketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FAA1DE2C02E8B400933F2C /* AddBucketView.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,9 +68,9 @@
 /* Begin PBXFileReference section */
 		693589122C002DB400E0DC3A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6963085A2C1E963100ECC22A /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
-		69D1E73D2C01870E0060279D /* BucketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketView.swift; sourceTree = "<group>"; };
-		69D1E73F2C0187460060279D /* BucketGridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketGridItemView.swift; sourceTree = "<group>"; };
-		69D1E7412C01881D0060279D /* AllBucketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBucketsView.swift; sourceTree = "<group>"; };
+		69D1E73D2C01870E0060279D /* BucketDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketDetailView.swift; sourceTree = "<group>"; };
+		69D1E73F2C0187460060279D /* BucketGridItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketGridItem.swift; sourceTree = "<group>"; };
+		69D1E7412C01881D0060279D /* BucketsMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketsMainView.swift; sourceTree = "<group>"; };
 		69D26AFD2BD1B936004E950E /* Everything.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Everything.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69D26B002BD1B936004E950E /* EverythingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingApp.swift; sourceTree = "<group>"; };
 		69D26B022BD1B936004E950E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		69D2C7EC2C10F3F3003209AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		69D2C7EE2C10F3F3003209AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69EA23C62C00320600C38281 /* Bucket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucket.swift; sourceTree = "<group>"; };
-		69EE1CE82C1A998E005F01BD /* BucketdsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketdsGrid.swift; sourceTree = "<group>"; };
+		69EE1CE82C1A998E005F01BD /* BucketGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketGrid.swift; sourceTree = "<group>"; };
 		69FAA1DE2C02E8B400933F2C /* AddBucketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBucketView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,9 +144,9 @@
 		6963085D2C1E9C1500ECC22A /* All Buckets View */ = {
 			isa = PBXGroup;
 			children = (
-				69D1E7412C01881D0060279D /* AllBucketsView.swift */,
-				69EE1CE82C1A998E005F01BD /* BucketdsGrid.swift */,
-				69D1E73F2C0187460060279D /* BucketGridItemView.swift */,
+				69D1E7412C01881D0060279D /* BucketsMainView.swift */,
+				69EE1CE82C1A998E005F01BD /* BucketGrid.swift */,
+				69D1E73F2C0187460060279D /* BucketGridItem.swift */,
 			);
 			path = "All Buckets View";
 			sourceTree = "<group>";
@@ -154,7 +154,7 @@
 		6963085E2C1E9C2900ECC22A /* Bucket View */ = {
 			isa = PBXGroup;
 			children = (
-				69D1E73D2C01870E0060279D /* BucketView.swift */,
+				69D1E73D2C01870E0060279D /* BucketDetailView.swift */,
 			);
 			path = "Bucket View";
 			sourceTree = "<group>";
@@ -401,15 +401,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69EE1CE92C1A998E005F01BD /* BucketdsGrid.swift in Sources */,
+				69EE1CE92C1A998E005F01BD /* BucketGrid.swift in Sources */,
 				69FAA1DF2C02E8B400933F2C /* AddBucketView.swift in Sources */,
 				693589132C002DB400E0DC3A /* Item.swift in Sources */,
-				69D1E7422C01881D0060279D /* AllBucketsView.swift in Sources */,
-				69D1E7402C0187460060279D /* BucketGridItemView.swift in Sources */,
+				69D1E7422C01881D0060279D /* BucketsMainView.swift in Sources */,
+				69D1E7402C0187460060279D /* BucketGridItem.swift in Sources */,
 				69EA23C72C00320600C38281 /* Bucket.swift in Sources */,
 				69D26B032BD1B936004E950E /* ContentView.swift in Sources */,
 				69D26B012BD1B936004E950E /* EverythingApp.swift in Sources */,
-				69D1E73E2C01870E0060279D /* BucketView.swift in Sources */,
+				69D1E73E2C01870E0060279D /* BucketDetailView.swift in Sources */,
 				6963085B2C1E963100ECC22A /* AddItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

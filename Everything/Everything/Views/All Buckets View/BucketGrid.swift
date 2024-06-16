@@ -1,5 +1,5 @@
 //
-//  BucketdsGrid.swift
+//  BucketGrid.swift
 //  Everything
 //
 //  Created by Patrick McGonigle on 6/12/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct BucketdsGrid: View {
+struct BucketGrid: View {
     
     @Environment(\.modelContext) private var modelContext
     @Query private var buckets: [Bucket]
@@ -28,9 +28,9 @@ struct BucketdsGrid: View {
         LazyVGrid(columns: [gridItemSpec]) {
             ForEach(buckets) { bucket in
                 NavigationLink {
-                    BucketView(bucket: bucket)
+                    BucketDetailView(bucket: bucket)
                 } label: {
-                    BucketGridItemView(bucket: bucket)
+                    BucketGridItem(bucket: bucket)
                 }
             }
             .onDelete(perform: deleteItems)
