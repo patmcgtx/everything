@@ -27,7 +27,7 @@ final class Bucket: Identifiable {
     }
     
     /// Relationships
-    var items = [Item]()
+    var items: [Item]? // Note that this relationship has to be optional
 
     /// You can star a bucket for favorite / priority viewing
     var isStarred: Bool = false
@@ -56,6 +56,8 @@ final class Bucket: Identifiable {
         self.about = about
         self.photoData = photoData
         
+        // Note that items cannot be set during the initializer
+
         let now = Date()
         self.whenCreated = now
         self.whenUpdated = now

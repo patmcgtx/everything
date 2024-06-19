@@ -12,6 +12,8 @@ import SwiftData
 /// A view of all the buckets, possibly filtered.
 struct BucketsMainView: View {
     
+    @Environment(\.modelContext) private var modelContext
+
     // MARK: Search
     
     @State private var searchText: String = ""
@@ -35,7 +37,7 @@ struct BucketsMainView: View {
             AddBucketForm(isPresented: self.$isAddBucketViewPresented)
         })
         .sheet(isPresented: self.$isAddItemViewPresented, content: {
-            AddItemForm(isPresented: self.$isAddItemViewPresented)
+            AddItemForm(modelContext: modelContext, isPresented: self.$isAddItemViewPresented)
         })
 #if os(macOS)
         .navigationSplitViewColumnWidth(min: 180, ideal: 200)

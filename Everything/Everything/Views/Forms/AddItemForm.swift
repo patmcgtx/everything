@@ -13,7 +13,7 @@ struct AddItemForm: View {
     
     // MARK: Persistence
     
-    @Environment(\.modelContext) private var modelContext
+    let modelContext: ModelContext
     @Query(sort: \Bucket.title, order: .forward) private var allBuckets: [Bucket]
         
     // MARK: User input fields
@@ -59,13 +59,17 @@ struct AddItemForm: View {
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button("Done") {
+                        
+                        // TODO patmcg create a method on Item to encapsulate this logic
+                        let newItem = Item(title: self.titleValue,
+                                           about: self.aboutValue)
+                        self.modelContext.insert(newItem)
+                        
                         let selectedBuckets = self.allBuckets.filter {
                             self.bucketSelection.contains($0.id)
                         }
-                        let newItem = Item(title: self.titleValue,
-                                           about: self.aboutValue,
-                                           buckets: selectedBuckets)
-                        self.modelContext.insert(newItem)
+                        newItem.buckets = selectedBuckets
+                        
                         self.isPresented = false
                     }
                 }

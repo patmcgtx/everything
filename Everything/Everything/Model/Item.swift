@@ -19,7 +19,7 @@ final class Item: Identifiable {
     var about: String
     
     /// Relationships
-    var buckets: [Bucket]
+    var buckets: [Bucket]? // Note that this relationship has to be optional
     
     // MARK: Metadata
 
@@ -33,11 +33,12 @@ final class Item: Identifiable {
     
     // MARK: Initializers
 
-    init(title: String, about: String, buckets: [Bucket]) {
+    init(title: String, about: String) {
         
         self.title = title
         self.about = about
-        self.buckets = buckets
+        
+        // Note that buckers cannot be set during the initializer
 
         let now = Date()
         self.whenCreated = now
