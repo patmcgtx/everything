@@ -42,6 +42,12 @@ struct AddItemForm: View {
                     TextField("About", text: self.$aboutValue)
                         .focused(self.$focus, equals: .about)
                 }
+                
+                Section(header: Text("Buckets")) {
+                    List(allBuckets) { bucket in
+                        BucketSelectionRow(bucket: bucket)
+                    }
+                }
             }
             .navigationTitle("New Item")
             .toolbar {
@@ -66,15 +72,25 @@ struct AddItemForm: View {
             .onAppear {
                 self.focus = .title
             }
-            
-            // Buck list-selection has to be *outside* of the Form to work correctly
-            Section(header: Text("Buckets")) {
-                List(self.allBuckets, id: \.id, selection: self.$bucketSelection) { bucket in
-                    Text(bucket.title)
-                }
-            }
-
         }
     }
+}
+
+struct BucketSelectionRow: View {
+
+    @Bindable var bucket: Bucket
     
+    // MARK: Main content
+    
+    var body: some View {
+        HStack {
+            Image(systemName: bucket.isSelected ? "checkmark.circle" : "circle")
+            Text(bucket.title)
+        }
+        // .onTapGesture does not work, requires simultaneousGesture
+        .simultaneousGesture(TapGesture().onEnded {
+            print("Gesture on VStack.")
+            self.bucket.isSelected = true
+        })
+    }
 }

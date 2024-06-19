@@ -48,6 +48,11 @@ final class Bucket: Identifiable {
     /// Cover photo
     var photoData: Data?
     
+    // MARK: Transient properties
+    
+    /// Used temporarily for bucket selection
+    @Transient var isSelected = false
+    
     // MARK: Initializers
     
     init(title: String, about: String, photoData: Data? = nil) {
