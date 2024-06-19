@@ -46,7 +46,7 @@ struct AddItemForm: View {
                 
                 Section(header: Text("Buckets")) {
                     List(allBuckets) { bucket in
-                        BucketSelectionRow(bucket: bucket)
+                        BucketSelectionRow(bucket: bucket, bucketSelection: self.$bucketSelection)
                     }
                 }
             }
@@ -79,19 +79,27 @@ struct AddItemForm: View {
     /// Displays a bucket to select for an item
     struct BucketSelectionRow: View {
         
+        @State var isSelected = false
         @Bindable var bucket: Bucket
-        
+        @Binding var bucketSelection: Set<UUID>
+
         // MARK: Main content
         
         var body: some View {
             HStack {
-                Image(systemName: bucket.isSelected ? "checkmark.circle" : "circle")
+                let isBucketSelected = self.bucketSelection.contains(self.bucket.id)
+                Image(systemName: isBucketSelected ? "checkmark.circle" : "circle")
                 Text(bucket.title)
             }
             // .onTapGesture does not work, requires simultaneousGesture
             .simultaneousGesture(TapGesture().onEnded {
                 print("Gesture on VStack.")
-                self.bucket.isSelected.toggle()
+                self.isSelected.toggle()
+                if self.isSelected {
+                    self.bucketSelection.insert(self.bucket.id)
+                } else {
+                    self.bucketSelection.remove(self.bucket.id)
+                }
             })
         }
     }

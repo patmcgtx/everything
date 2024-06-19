@@ -48,11 +48,6 @@ final class Bucket: Identifiable {
     /// Cover photo
     var photoData: Data?
     
-    // MARK: Transient properties
-    
-    /// Used temporarily for bucket selection
-    var isSelected = false // TODO patmcg make transient?  Seems to break AddItemForm UI updates, though.
-    
     // MARK: Initializers
     
     init(title: String, about: String, photoData: Data? = nil) {
