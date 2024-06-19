@@ -12,6 +12,8 @@ import SwiftData
 @Model
 final class Bucket: Identifiable {
     
+    // MARK: User-facing data
+    
     /// Title describing this bucket, e.g. "Coffee shops"
     var title: String {
         didSet {
@@ -25,12 +27,14 @@ final class Bucket: Identifiable {
             self.whenUpdated = Date()
         }
     }
-    
-    /// Relationships
-    var items: [Item]? // Note that this relationship has to be optional
 
     /// You can star a bucket for favorite / priority viewing
     var isStarred: Bool = false
+
+    // MARK: Relationships
+    // Note that this relationships have to be optional and cannot be set on init
+
+    var items: [Item]?
 
     // MARK: Metadata
     
@@ -56,8 +60,6 @@ final class Bucket: Identifiable {
         self.about = about
         self.photoData = photoData
         
-        // Note that items cannot be set during the initializer
-
         let now = Date()
         self.whenCreated = now
         self.whenUpdated = now

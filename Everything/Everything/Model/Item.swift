@@ -11,15 +11,19 @@ import SwiftData
 /// A bucket item in the database.
 @Model
 final class Item: Identifiable {
-            
+    
+    // MARK: User-facing data
+    
     /// The title of the item, e.g. "Barton Springs Pool"
     var title: String
     
     /// Markdown text describing the item
     var about: String
     
-    /// Relationships
-    var buckets: [Bucket]? // Note that this relationship has to be optional
+    // MARK: Relationships
+    // Note that this relationships have to be optional and cannot be set on init
+    
+    var buckets: [Bucket]?
     
     // MARK: Metadata
 
@@ -38,8 +42,6 @@ final class Item: Identifiable {
         self.title = title
         self.about = about
         
-        // Note that buckers cannot be set during the initializer
-
         let now = Date()
         self.whenCreated = now
         self.whenUpdated = now
