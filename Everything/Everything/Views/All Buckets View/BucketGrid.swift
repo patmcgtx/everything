@@ -8,11 +8,16 @@
 import SwiftUI
 import SwiftData
 
+/// A grid / collection view of all filtered buckets
 struct BucketGrid: View {
+    
+    // MARK: Persistence
     
     @Environment(\.modelContext) private var modelContext
     @Query private var buckets: [Bucket]
-    
+
+    // MARK: Search filter
+
     let filterText: String
     
     init(filterText: String) {
@@ -22,6 +27,8 @@ struct BucketGrid: View {
         let predicate = Bucket.filterBucketsBy(text: filterText)
         _buckets = Query(filter: predicate, sort: \.title, order: .forward)
     }
+
+    // MARK: Main view
 
     var body: some View {
         // TODO Make two-column (or 40% or whatever), at least on iPhone
@@ -37,6 +44,8 @@ struct BucketGrid: View {
             .onDelete(perform: deleteItems)
         }
     }
+    
+    // MARK: Helpers
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {

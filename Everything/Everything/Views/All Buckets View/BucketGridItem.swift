@@ -11,7 +11,7 @@ import SwiftUI
 /// A view representing a bucket in a grid, ostensibly for navigation to that bucket.
 struct BucketGridItem : View {
 
-    // MARK: Incoming data
+    // MARK: Backing data
     
     let bucket: Bucket
     

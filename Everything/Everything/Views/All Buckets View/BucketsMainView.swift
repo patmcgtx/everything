@@ -12,11 +12,6 @@ import SwiftData
 /// A view of all the buckets, possibly filtered.
 struct BucketsMainView: View {
     
-    // MARK: Persistence / queries
-    
-    @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Bucket.title, order: .forward) private var buckets: [Bucket]
-    
     // MARK: Search
     
     @State private var searchText: String = ""
