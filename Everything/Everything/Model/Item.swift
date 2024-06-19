@@ -47,3 +47,17 @@ final class Item: Identifiable {
         self.whenUpdated = now
     }
 }
+
+extension Item {
+    
+    /// Encapsulates Item creation logic with buckets, etc. options
+    static func createItem(using context: ModelContext,
+                    title: String,
+                    about: String,
+                    buckets: [Bucket]) {
+        let item = Item(title: title, about: about)
+        item.buckets = buckets
+        context.insert(item)
+    }
+    
+}

@@ -59,17 +59,16 @@ struct AddItemForm: View {
                 }
                 ToolbarItem(placement: .primaryAction) {
                     Button("Done") {
-                        
-                        // TODO patmcg create a method on Item to encapsulate this logic
-                        let newItem = Item(title: self.titleValue,
-                                           about: self.aboutValue)
-                        self.modelContext.insert(newItem)
-                        
+
                         let selectedBuckets = self.allBuckets.filter {
                             self.bucketSelection.contains($0.id)
                         }
-                        newItem.buckets = selectedBuckets
-                        
+
+                        Item.createItem(using: self.modelContext,
+                                        title: self.titleValue,
+                                        about: self.aboutValue,
+                                        buckets: selectedBuckets)
+
                         self.isPresented = false
                     }
                 }
