@@ -79,8 +79,13 @@ struct AddItemForm: View {
     /// Displays a bucket to select for an item
     struct BucketSelectionRow: View {
         
+        /// The bucket to display in this row
+        let bucket: Bucket
+        
+        /// Tracks whether *this* bucket row is selected in the UI
         @State var isSelected = false
-        @Bindable var bucket: Bucket
+        
+        /// Collection of selected buckets to update on the main view
         @Binding var bucketSelection: Set<UUID>
 
         // MARK: Main content
@@ -93,7 +98,6 @@ struct AddItemForm: View {
             }
             // .onTapGesture does not work, requires simultaneousGesture
             .simultaneousGesture(TapGesture().onEnded {
-                print("Gesture on VStack.")
                 self.isSelected.toggle()
                 if self.isSelected {
                     self.bucketSelection.insert(self.bucket.id)
