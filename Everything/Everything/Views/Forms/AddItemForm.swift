@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 
+/// Form that prompts the use to add an item
 struct AddItemForm: View {
     
     // MARK: Persistence
@@ -74,23 +75,27 @@ struct AddItemForm: View {
             }
         }
     }
-}
-
-struct BucketSelectionRow: View {
-
-    @Bindable var bucket: Bucket
     
-    // MARK: Main content
-    
-    var body: some View {
-        HStack {
-            Image(systemName: bucket.isSelected ? "checkmark.circle" : "circle")
-            Text(bucket.title)
+    /// Displays a bucket to select for an item
+    struct BucketSelectionRow: View {
+        
+        @Bindable var bucket: Bucket
+        
+        // MARK: Main content
+        
+        var body: some View {
+            HStack {
+                Image(systemName: bucket.isSelected ? "checkmark.circle" : "circle")
+                Text(bucket.title)
+            }
+            // .onTapGesture does not work, requires simultaneousGesture
+            .simultaneousGesture(TapGesture().onEnded {
+                print("Gesture on VStack.")
+                self.bucket.isSelected.toggle()
+            })
         }
-        // .onTapGesture does not work, requires simultaneousGesture
-        .simultaneousGesture(TapGesture().onEnded {
-            print("Gesture on VStack.")
-            self.bucket.isSelected = true
-        })
     }
+    
 }
+
+

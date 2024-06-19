@@ -51,7 +51,7 @@ final class Bucket: Identifiable {
     // MARK: Transient properties
     
     /// Used temporarily for bucket selection
-    @Transient var isSelected = false
+    var isSelected = false // TODO patmcg make transient?  Seems to break AddItemForm UI updates, though.
     
     // MARK: Initializers
     
