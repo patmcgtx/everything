@@ -28,6 +28,13 @@ final class Item: Identifiable {
         }
     }
 
+    /// You can star an item  for favorite / priority viewing
+    var isStarred: Bool = false {
+        didSet {
+            self.whenUpdated = Date()
+        }
+    }
+
     // MARK: Relationships
     // Note that this relationships have to be optional and cannot be set on init
     
