@@ -29,7 +29,11 @@ final class Bucket: Identifiable {
     }
 
     /// You can star a bucket for favorite / priority viewing
-    var isStarred: Bool = false
+    var isStarred: Bool = false {
+        didSet {
+            self.whenUpdated = Date()
+        }
+    }
 
     // MARK: Relationships
     // Note that this relationships have to be optional and cannot be set on init

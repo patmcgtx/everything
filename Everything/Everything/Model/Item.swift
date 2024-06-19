@@ -15,11 +15,19 @@ final class Item: Identifiable {
     // MARK: User-facing data
     
     /// The title of the item, e.g. "Barton Springs Pool"
-    var title: String
-    
+    var title: String {
+        didSet {
+            self.whenUpdated = Date()
+        }
+    }
+
     /// Markdown text describing the item
-    var about: String
-    
+    var about: String {
+        didSet {
+            self.whenUpdated = Date()
+        }
+    }
+
     // MARK: Relationships
     // Note that this relationships have to be optional and cannot be set on init
     
