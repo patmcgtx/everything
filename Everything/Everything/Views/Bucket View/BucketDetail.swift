@@ -25,7 +25,11 @@ struct BucketDetail: View {
             Text(bucket.about)
             if let items = bucket.items {
                 List(items) { item in
-                    Text(item.title)
+                    NavigationLink {
+                        ItemDetail(item: item)
+                    } label: {
+                        Text(item.title)
+                    }
                 }
             }
         }

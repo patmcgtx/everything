@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69060B6E2C24F47700B8200B /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060B6D2C24F47700B8200B /* ItemDetail.swift */; };
 		693589132C002DB400E0DC3A /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693589122C002DB400E0DC3A /* Item.swift */; };
 		6963085B2C1E963100ECC22A /* AddItemForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6963085A2C1E963100ECC22A /* AddItemForm.swift */; };
 		69D1E73E2C01870E0060279D /* BucketDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D1E73D2C01870E0060279D /* BucketDetail.swift */; };
@@ -65,6 +66,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		69060B6D2C24F47700B8200B /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
 		693589122C002DB400E0DC3A /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6963085A2C1E963100ECC22A /* AddItemForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemForm.swift; sourceTree = "<group>"; };
 		69D1E73D2C01870E0060279D /* BucketDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketDetail.swift; sourceTree = "<group>"; };
@@ -121,6 +123,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69060B6C2C24F46200B8200B /* Item View */ = {
+			isa = PBXGroup;
+			children = (
+				69060B6D2C24F47700B8200B /* ItemDetail.swift */,
+			);
+			path = "Item View";
+			sourceTree = "<group>";
+		};
 		693589112C002DA000E0DC3A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 				69D26B022BD1B936004E950E /* ContentView.swift */,
 				6963085D2C1E9C1500ECC22A /* All Buckets View */,
 				6963085E2C1E9C2900ECC22A /* Bucket View */,
+				69060B6C2C24F46200B8200B /* Item View */,
 				6963085C2C1E9BE700ECC22A /* Forms */,
 			);
 			path = Views;
@@ -401,6 +412,7 @@
 				69EE1CE92C1A998E005F01BD /* BucketGrid.swift in Sources */,
 				69FAA1DF2C02E8B400933F2C /* AddBucketForm.swift in Sources */,
 				693589132C002DB400E0DC3A /* Item.swift in Sources */,
+				69060B6E2C24F47700B8200B /* ItemDetail.swift in Sources */,
 				69D1E7422C01881D0060279D /* BucketsMainView.swift in Sources */,
 				69EA23C72C00320600C38281 /* Bucket.swift in Sources */,
 				69D26B032BD1B936004E950E /* ContentView.swift in Sources */,
