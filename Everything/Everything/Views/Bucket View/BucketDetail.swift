@@ -20,6 +20,14 @@ struct BucketDetail: View {
     // MARK: Main view
     
     var body: some View {
-        Text(bucket.about)
+        VStack {
+            Text(bucket.title)
+            Text(bucket.about)
+            if let items = bucket.items {
+                List(items) { item in
+                    Text(item.title)
+                }
+            }
+        }
     }
 }
