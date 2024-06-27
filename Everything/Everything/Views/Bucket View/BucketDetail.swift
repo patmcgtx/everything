@@ -39,7 +39,7 @@ struct BucketDetail: View {
         }
         .sheet(isPresented: self.$isItemPresented) {
             if let item = self.selectedItem {
-                ItemDetail(item: item)
+                ItemDetail(itemToShow: item, associatedItems: self.bucket.items ?? [])
             }
         }
     }
