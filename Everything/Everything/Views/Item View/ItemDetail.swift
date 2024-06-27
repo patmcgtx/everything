@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-/// A view of an item's details
+/// A view of an item's details along with associated items
 struct ItemDetail : View {
-
+    
     // MARK: Backing date
     
     /// The item to display
@@ -22,22 +22,25 @@ struct ItemDetail : View {
     // MARK: Main content
     
     var body: some View {
-        ScrollView(.horizontal) {
-            LazyHStack {
-                ForEach(self.associatedItems) { item in
-                    Spacer()
-                    VStack {
-                        Text(item.title).fontWeight(.bold)
-                        Text(item.about)
+        GeometryReader { geometry in
+            ScrollView(.horizontal) {
+                LazyHStack {
+                    ForEach(self.associatedItems) { item in
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 25.0)
+                                .fill(.yellow)
+                                .frame(width: geometry.size.width, height: geometry.size.height)
+                            VStack {
+                                Text(item.title).fontWeight(.bold)
+                                Text(item.about)
+                            }
+                        }
                     }
-                    .border(.black, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-                    Spacer()
                 }
+                .scrollTargetLayout()
             }
-            .scrollTargetLayout()
         }
         .scrollTargetBehavior(.viewAligned)
         .safeAreaPadding(.horizontal, 40)
     }
-    
 }
