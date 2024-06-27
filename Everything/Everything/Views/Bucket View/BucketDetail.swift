@@ -12,10 +12,15 @@ import SwiftUI
 struct BucketDetail: View {
     
     // TODO patmcg Update bucket.lastViewed when this screen loads
-
+    
     // MARK: Backing data
-
+    
     let bucket: Bucket
+    
+    // MARK: Private state
+    
+    @State private var isItemPresented = false
+    @State private var selectedItem: Item?
     
     // MARK: Main view
     
@@ -25,12 +30,16 @@ struct BucketDetail: View {
             Text(bucket.about)
             if let items = bucket.items {
                 List(items) { item in
-                    NavigationLink {
-                        ItemDetail(item: item)
-                    } label: {
-                        Text(item.title)
+                    Text(item.title).onTapGesture {
+                        self.selectedItem = item
+                        self.isItemPresented = true
                     }
                 }
+            }
+        }
+        .sheet(isPresented: self.$isItemPresented) {
+            if let item = self.selectedItem {
+                ItemDetail(item: item)
             }
         }
     }
