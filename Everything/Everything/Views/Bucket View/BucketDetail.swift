@@ -28,6 +28,7 @@ struct BucketDetail: View {
         VStack {
             Text(bucket.title)
             Text(bucket.about)
+            Text("Selected: \(self.selectedItem?.title ?? "None")")
             if let items = bucket.items {
                 List(items) { item in
                     BucketItemRow(item: item, selectedItem: self.$selectedItem, isItemPresented: self.$isItemPresented)
@@ -57,9 +58,9 @@ struct BucketDetail: View {
         }
         
         private func tappedItem() {
-            self.selectedItem = Item(title: "", about: "")
+//            self.selectedItem = Item(title: "", about: "")
             self.selectedItem = item
-            self.isItemPresented = true
+//            self.isItemPresented = true
         }
     }
     
