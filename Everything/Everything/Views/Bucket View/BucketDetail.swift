@@ -57,6 +57,7 @@ struct BucketDetail: View {
         }
         
         private func tappedItem() {
+            self.selectedItem = Item(title: "", about: "")
             self.selectedItem = item
             self.isItemPresented = true
         }
