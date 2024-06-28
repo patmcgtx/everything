@@ -31,8 +31,9 @@ struct ItemDetail : View {
                                 .fill(.yellow)
                                 .frame(width: geometry.size.width, height: geometry.size.height)
                             VStack {
-                                Text(item.title).fontWeight(.bold)
-                                Text(item.about)
+                                Text("Selected: \(itemToShow.title)")
+                                Text("Title: \(item.title)").fontWeight(.bold)
+                                Text("About: \(item.about)")
                             }
                         }
                     }

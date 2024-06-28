@@ -30,17 +30,37 @@ struct BucketDetail: View {
             Text(bucket.about)
             if let items = bucket.items {
                 List(items) { item in
-                    Text(item.title).onTapGesture {
-                        self.selectedItem = item
-                        self.isItemPresented = true
-                    }
+                    BucketItemRow(item: item, selectedItem: self.$selectedItem, isItemPresented: self.$isItemPresented)
                 }
             }
         }
         .sheet(isPresented: self.$isItemPresented) {
             if let item = self.selectedItem {
                 ItemDetail(itemToShow: item, associatedItems: self.bucket.items ?? [])
+            } else {
+                Text("No item selected")
             }
         }
     }
+    
+    struct BucketItemRow: View {
+        
+        let item: Item
+        
+        @Binding var selectedItem: Item?
+        @Binding var isItemPresented: Bool
+        
+        var body: some View {
+            Button(action: tappedItem) {
+                Label(item.title, systemImage: "plus")
+            }
+        }
+        
+        private func tappedItem() {
+            self.selectedItem = item
+            self.isItemPresented = true
+        }
+    }
+    
+    
 }
