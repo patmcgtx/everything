@@ -30,7 +30,7 @@ struct BucketDetail: View {
             Text(bucket.about)
             if let items = bucket.items {
                 List(items) { item in
-                    // isHighlighted was added to force a state change and redraw when selectedItem changes
+                    // isHighlighted was mostly added to force a state change and redraw when selectedItem changes
                     let isHighlighted = self.selectedItem == item
                     BucketItemRow(item: item, isHighlighted: isHighlighted, selectedItem: self.$selectedItem, isItemPresented: self.$isItemPresented)
                 }
@@ -45,15 +45,23 @@ struct BucketDetail: View {
         }
     }
     
+    // TODO This may move to a global area as I add the Everything tab
+    
+    /// A view for each item tow in a bucket
     struct BucketItemRow: View {
-        
+
+        /// The backing item for the row
         let item: Item
 
-        // isHighlighted was added to force a state change and redraw when selectedItem changes.
+        /// Whether or not the row is highlighted; added to force a state change and redraw when selectedItem changes.
         let isHighlighted: Bool
+        
+        // MARK: Bindings
         
         @Binding var selectedItem: Item?
         @Binding var isItemPresented: Bool
+        
+        // MARK: Main content
         
         var body: some View {
             Button(action: tappedItem) {
