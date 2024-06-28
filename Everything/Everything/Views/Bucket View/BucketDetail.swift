@@ -28,10 +28,11 @@ struct BucketDetail: View {
         VStack {
             Text(bucket.title)
             Text(bucket.about)
-            Text("Selected: \(self.selectedItem?.title ?? "None")")
             if let items = bucket.items {
                 List(items) { item in
-                    BucketItemRow(item: item, selectedItem: self.$selectedItem, isItemPresented: self.$isItemPresented)
+                    // isHighlighted was added to force a state change and redraw when selectedItem changes
+                    let isHighlighted = self.selectedItem == item
+                    BucketItemRow(item: item, isHighlighted: isHighlighted, selectedItem: self.$selectedItem, isItemPresented: self.$isItemPresented)
                 }
             }
         }
@@ -47,20 +48,23 @@ struct BucketDetail: View {
     struct BucketItemRow: View {
         
         let item: Item
+
+        // isHighlighted was added to force a state change and redraw when selectedItem changes.
+        let isHighlighted: Bool
         
         @Binding var selectedItem: Item?
         @Binding var isItemPresented: Bool
         
         var body: some View {
             Button(action: tappedItem) {
-                Label(item.title, systemImage: "plus")
+                let imageName = isHighlighted ? "star.fill" : "star"
+                Label(item.title, systemImage: imageName)
             }
         }
         
         private func tappedItem() {
-//            self.selectedItem = Item(title: "", about: "")
             self.selectedItem = item
-//            self.isItemPresented = true
+            self.isItemPresented = true
         }
     }
     
