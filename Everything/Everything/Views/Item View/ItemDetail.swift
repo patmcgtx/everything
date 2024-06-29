@@ -46,12 +46,16 @@ struct ItemDetail : View {
                     }
                 }
                 .onAppear() {
+                    // TODO This delay is hacky, and I don't love it.
+                    // Without the delay, it does not scroll to the selected item.
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                         scrollReader.scrollTo(itemToShow.id, anchor: .center)
                     }
                 }
                 .scrollTargetLayout()
             }
+            // TODO Ideally we use defaultScrollAnchor to auto-scroll to the selected item,
+            //      but so fsr I can't get it to work for a specific item, so the hack ^ above.
 //            .defaultScrollAnchor(.center)
         }
         .scrollTargetBehavior(.viewAligned)
