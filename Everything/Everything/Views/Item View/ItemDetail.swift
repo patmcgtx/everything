@@ -16,6 +16,11 @@ struct ItemDetail : View {
     /// The item to display
     let itemToShow: Item
     
+    // TODO Eventually turn the item array into a @Query; maybe pass in a Predicate.
+    //      This is for efficiency (don't have to load all items into memory)
+    //      as well as to display *any* list of items, however they are filtered
+    //      and sorted from the Everything tab, a bucker, tags, whatever.
+
     /// Other associates to display with the main item
     let associatedItems: [Item]
     
