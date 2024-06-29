@@ -28,23 +28,31 @@ struct ItemDetail : View {
     
     var body: some View {
         GeometryReader { geometry in
-            ScrollView(.horizontal) {
-                LazyHStack {
-                    ForEach(self.associatedItems) { item in
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 25.0)
-                                .fill(.yellow)
-                                .frame(width: geometry.size.width, height: geometry.size.height)
-                            VStack {
-                                Text("Selected: \(itemToShow.title)")
-                                Text("Title: \(item.title)").fontWeight(.bold)
-                                Text("About: \(item.about)")
+            ScrollViewReader { scrollReader in
+                ScrollView(.horizontal) {
+                    LazyHStack {
+                        ForEach(self.associatedItems) { item in
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 25.0)
+                                    .fill(.yellow)
+                                    .frame(width: geometry.size.width, height: geometry.size.height)
+                                VStack {
+                                    Text("Title: \(item.title)").fontWeight(.bold)
+                                    Text("About: \(item.about)")
+                                }
+                                .id(item.id)
                             }
                         }
                     }
                 }
+                .onAppear() {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                        scrollReader.scrollTo(itemToShow.id, anchor: .center)
+                    }
+                }
                 .scrollTargetLayout()
             }
+//            .defaultScrollAnchor(.center)
         }
         .scrollTargetBehavior(.viewAligned)
         .safeAreaPadding(.horizontal, 40)
