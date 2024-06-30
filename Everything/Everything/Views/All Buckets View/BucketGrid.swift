@@ -63,16 +63,18 @@ struct BucketGrid: View {
         
         var body: some View {
             
-            VStack {
-//                if let photoData = bucket.photoData,
-//                   let uiImage = UIImage(data: photoData) {
-//                    Image(uiImage: uiImage)
-//                        .resizable()
-//                        .aspectRatio(contentMode: ContentMode.fill)
-//                }
+            ZStack {
+                if let photoData = bucket.photoData,
+                   let uiImage = UIImage(data: photoData) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .aspectRatio(contentMode: ContentMode.fit)
+                }
 
-                Text(bucket.title)
-                    .padding()
+                VStack {
+                    Text(bucket.title)
+                        .padding()
+                }
             }
             .border(Color.black, width: 1)
             .padding()
