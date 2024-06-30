@@ -21,7 +21,7 @@ struct ItemDetail : View {
     //      as well as to display *any* list of items, however they are filtered
     //      and sorted from the Everything tab, a bucker, tags, whatever.
 
-    /// Other associates to display with the main item
+    /// Other associates to display alongside the main item
     let associatedItems: [Item]
     
     // MARK: Main content

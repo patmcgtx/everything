@@ -31,9 +31,7 @@ struct BucketGrid: View {
     // MARK: Main view
 
     var body: some View {
-        // TODO Make two-column (or 40% or whatever), at least on iPhone
-        let gridItemSpec = GridItem(.adaptive(minimum: 80, maximum: .greatestFiniteMagnitude))
-        LazyVGrid(columns: [gridItemSpec]) {
+        LazyVStack {
             ForEach(buckets) { bucket in
                 NavigationLink {
                     BucketDetail(bucket: bucket)
@@ -71,8 +69,7 @@ struct BucketGrid: View {
                    let uiImage = UIImage(data: photoData) {
                     Image(uiImage: uiImage)
                         .resizable()
-                        .aspectRatio(contentMode: ContentMode.fit)
-                        .frame(width: 200)
+                        .aspectRatio(contentMode: ContentMode.fill)
                 }
 
                 Text(bucket.title)
