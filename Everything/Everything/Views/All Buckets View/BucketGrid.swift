@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import WaterfallGrid
 
 /// A grid / collection view of all filtered buckets
 struct BucketGrid: View {
@@ -31,16 +32,14 @@ struct BucketGrid: View {
     // MARK: Main view
 
     var body: some View {
-        LazyVStack {
-            ForEach(buckets) { bucket in
-                NavigationLink {
-                    BucketDetail(bucket: bucket)
-                } label: {
-                    BucketGridItem(bucket: bucket)
-                }
+        WaterfallGrid(self.buckets) { bucket in
+            NavigationLink {
+                BucketDetail(bucket: bucket)
+            } label: {
+                BucketGridItem(bucket: bucket)
             }
-            .onDelete(perform: deleteItems)
         }
+//        .onDelete(perform: deleteItems)
     }
     
     // MARK: Helpers
@@ -65,12 +64,12 @@ struct BucketGrid: View {
         var body: some View {
             
             VStack {
-                if let photoData = bucket.photoData,
-                   let uiImage = UIImage(data: photoData) {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .aspectRatio(contentMode: ContentMode.fill)
-                }
+//                if let photoData = bucket.photoData,
+//                   let uiImage = UIImage(data: photoData) {
+//                    Image(uiImage: uiImage)
+//                        .resizable()
+//                        .aspectRatio(contentMode: ContentMode.fill)
+//                }
 
                 Text(bucket.title)
                     .padding()
