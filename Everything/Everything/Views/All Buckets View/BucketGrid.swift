@@ -51,36 +51,6 @@ struct BucketGrid: View {
             }
         }
     }
-
-    /// A view representing a bucket in a grid, ostensibly for navigation to that bucket.
-    struct BucketGridItem : View {
-
-        // MARK: Backing data
-        
-        let bucket: Bucket
-        
-        // MARK: Main view
-        
-        var body: some View {
-            
-            ZStack {
-                if let photoData = bucket.photoData,
-                   let uiImage = UIImage(data: photoData) {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .aspectRatio(contentMode: ContentMode.fit)
-                }
-
-                VStack {
-                    Text(bucket.title)
-                        .padding()
-                }
-            }
-            .border(Color.black, width: 1)
-            .padding()
-        }
-        
-    }
     
 }
 
