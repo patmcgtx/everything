@@ -19,6 +19,8 @@ struct BucketGridItem : View {
     
     var body: some View {
         
+        let textBg = Color.white.opacity(0.8)
+        
         ZStack {
             if let photoData = bucket.photoData,
                let uiImage = UIImage(data: photoData) {
@@ -28,29 +30,32 @@ struct BucketGridItem : View {
                     .aspectRatio(contentMode: ContentMode.fit)
             }
 
-            GeometryReader { geometry in
-                VStack {
-                    Text("12")
+            VStack(alignment: .leading) {
+                if let itemCount = self.bucket.items?.count {
+                    Text(String(itemCount))
                         .font(.subheadline)
-                        .padding(.all, 5.0)
-                        .background {
-                            Color.white.opacity(0.8)
-                        }
-                    Spacer()
-                    Text(bucket.title)
-                        .font(.headline)
                         .fontWeight(.bold)
-                        .multilineTextAlignment(.center)
-                        .padding(.all, 5.0)
-                        .background {
-                            Color.white.opacity(0.8)
-                        }
+                        .padding(.all, 6.0)
+                        .background { textBg }
+                        .clipShape(Capsule())
+                        .padding()
                 }
+                
+                Spacer()
+                
+                Text(bucket.title)
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .multilineTextAlignment(.center)
+                    .padding(.all, 6.0)
+                    .frame(maxWidth: .infinity)
+                    .background { textBg }
             }
              // This keeps the view form expanding vertically beyond the image
             .layoutPriority(-1)
         }
-        .border(Color.black, width: 1)
+        .border(Color.black, width: 0)
+        .cornerRadius(18)
         .padding()
         .frame(width: 200)
     }
