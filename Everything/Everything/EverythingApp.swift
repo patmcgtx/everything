@@ -26,6 +26,8 @@ struct EverythingApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            // Global theme settings here
+                .foregroundColor(.black)
         }
         .modelContainer(sharedModelContainer)
     }

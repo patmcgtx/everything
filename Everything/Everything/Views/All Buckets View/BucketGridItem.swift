@@ -39,6 +39,8 @@ struct BucketGridItem : View {
                     Spacer()
                     Text(bucket.title)
                         .font(.headline)
+                        .fontWeight(.bold)
+                        .multilineTextAlignment(.center)
                         .padding(.all, 5.0)
                         .background {
                             Color.white.opacity(0.8)
