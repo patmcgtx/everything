@@ -23,17 +23,30 @@ struct BucketGridItem : View {
             if let photoData = bucket.photoData,
                let uiImage = UIImage(data: photoData) {
                 Image(uiImage: uiImage)
+                // These keep the image from expanding full-size
                     .resizable()
                     .aspectRatio(contentMode: ContentMode.fit)
             }
 
-            VStack {
-                Text(bucket.title)
-                    .background {
-                        Color.white.opacity(0.8)
-                            .ignoresSafeArea()
-                    }
+            GeometryReader { geometry in
+                VStack {
+                    Text("12")
+                        .font(.subheadline)
+                        .padding(.all, 5.0)
+                        .background {
+                            Color.white.opacity(0.8)
+                        }
+                    Spacer()
+                    Text(bucket.title)
+                        .font(.headline)
+                        .padding(.all, 5.0)
+                        .background {
+                            Color.white.opacity(0.8)
+                        }
+                }
             }
+             // This keeps the view form expanding vertically beyond the image
+            .layoutPriority(-1)
         }
         .border(Color.black, width: 1)
         .padding()
