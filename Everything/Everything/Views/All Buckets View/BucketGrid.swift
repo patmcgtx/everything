@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftData
+import WaterfallGrid
 
 /// A grid / collection view of all filtered buckets
 struct BucketGrid: View {
@@ -31,18 +32,14 @@ struct BucketGrid: View {
     // MARK: Main view
 
     var body: some View {
-        // TODO Make two-column (or 40% or whatever), at least on iPhone
-        let gridItemSpec = GridItem(.adaptive(minimum: 80, maximum: .greatestFiniteMagnitude))
-        LazyVGrid(columns: [gridItemSpec]) {
-            ForEach(buckets) { bucket in
-                NavigationLink {
-                    BucketDetail(bucket: bucket)
-                } label: {
-                    BucketGridItem(bucket: bucket)
-                }
+        WaterfallGrid(self.buckets) { bucket in
+            NavigationLink {
+                BucketDetail(bucket: bucket)
+            } label: {
+                BucketGridItem(bucket: bucket)
             }
-            .onDelete(perform: deleteItems)
         }
+//        .onDelete(perform: deleteItems)
     }
     
     // MARK: Helpers
@@ -53,35 +50,6 @@ struct BucketGrid: View {
                 modelContext.delete(buckets[index])
             }
         }
-    }
-
-    /// A view representing a bucket in a grid, ostensibly for navigation to that bucket.
-    struct BucketGridItem : View {
-
-        // MARK: Backing data
-        
-        let bucket: Bucket
-        
-        // MARK: Main view
-        
-        var body: some View {
-            
-            VStack {
-                if let photoData = bucket.photoData,
-                   let uiImage = UIImage(data: photoData) {
-                    Image(uiImage: uiImage)
-                        .resizable()
-                        .aspectRatio(contentMode: ContentMode.fit)
-                        .frame(width: 200)
-                }
-
-                Text(bucket.title)
-                    .padding()
-            }
-            .border(Color.black, width: 1)
-            .padding()
-        }
-        
     }
     
 }

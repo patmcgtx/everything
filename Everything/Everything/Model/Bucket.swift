@@ -53,7 +53,7 @@ final class Bucket: Identifiable {
     /// The timestamp for when this bucket was last viewed
     var lastViewed: Date
 
-    /// Cover photo
+    /// Cover / thumbnail image
     var photoData: Data?
     
     // MARK: Initializers
