@@ -7,7 +7,7 @@
 
 import SwiftUI
 import SwiftData
-import WaterfallGrid
+import Flow
 
 /// A grid / collection view of all filtered buckets
 struct BucketGrid: View {
@@ -32,11 +32,13 @@ struct BucketGrid: View {
     // MARK: Main view
 
     var body: some View {
-        WaterfallGrid(self.buckets) { bucket in
-            NavigationLink {
-                BucketDetail(bucket: bucket)
-            } label: {
-                BucketGridItem(bucket: bucket)
+        HFlow {
+            ForEach(self.buckets) { bucket in
+                NavigationLink {
+                    BucketDetail(bucket: bucket)
+                } label: {
+                    BucketGridItem(bucket: bucket)
+                }
             }
         }
 //        .onDelete(perform: deleteItems)
