@@ -57,7 +57,7 @@ struct BucketGridItem : View {
         .border(Color.black, width: 0)
         .cornerRadius(18)
         .padding()
-        .frame(width: 200)
+        .frame(width: 160)
     }
     
 }
